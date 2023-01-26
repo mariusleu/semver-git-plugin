@@ -6,8 +6,8 @@ plugins {
     id("com.gradle.plugin-publish") version "0.11.0"
 }
 
-group = "io.wusa"
-version = "2.3.7"
+group = "io.github.mariusleu"
+version = "2.4.0"
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
@@ -42,7 +42,7 @@ tasks.withType<Wrapper> {
 gradlePlugin {
     plugins {
         create("semverGitPlugin") {
-            id = "io.wusa.semver-git-plugin"
+            id = "io.github.mariusleu.semver-git-plugin"
             displayName = "semver-git-plugin"
             description = "Project versioning based on semantic versioning via git tags"
             implementationClass = "io.wusa.SemverGitPlugin"
@@ -51,8 +51,8 @@ gradlePlugin {
 }
 
 pluginBundle {
-    website = "https://github.com/ilovemilk/semver-git-plugin"
-    vcsUrl = "https://github.com/ilovemilk/semver-git-plugin"
+    website = "https://github.com/mariusleu/semver-git-plugin"
+    vcsUrl = "https://github.com/mariusleu/semver-git-plugin"
     description = "Project versioning based on semantic versioning via git tags"
     tags = listOf("git", "kotlin", "semver", "semantic-versioning", "version", "semantic", "release")
 }
@@ -60,7 +60,7 @@ pluginBundle {
 publishing {
     publications {
         create<MavenPublication>("maven") {
-            groupId = "io.wusa"
+            groupId = "io.github.mariusleu"
             artifactId = "semver-git-plugin"
 
             from(components["java"])
